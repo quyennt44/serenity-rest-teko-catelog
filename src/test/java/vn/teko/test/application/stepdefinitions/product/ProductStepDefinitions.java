@@ -1,11 +1,12 @@
 package vn.teko.test.application.stepdefinitions.product;
 
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import net.thucydides.core.annotations.Steps;
 import vn.teko.application.steps.CommonSteps;
 import vn.teko.application.steps.DatabaseSteps;
 import vn.teko.test.application.common.ApplicationEndPoints;
-import vn.teko.test.application.model.SaleCategoryModel;
+import vn.teko.test.application.model.MasterCategoryModel;
 import vn.teko.test.catelog.api.object.Product;
 import vn.teko.utilities.Constant;
 
@@ -33,14 +34,16 @@ public class ProductStepDefinitions {
 	
 	@And("^User sets database entity$")
 	public void set_model() {
-		Class<SaleCategoryModel> model = SaleCategoryModel.class;		
+		Class<MasterCategoryModel> model = MasterCategoryModel.class;		
 		commonSteps.storeObject(Constant.DATABASE_MODEL_CLASS_VARIABLE, model);		
 	}
 	
-	@And("^User sets temp database table$")
-	public void set_temp_model() {		
-		commonSteps.storeObject(Constant.DATABASE_MODEL_CLASS_TEMP_VARIABLE, Constant.ENTITY_SALE_CATEGORY);		
+	@And("^User sets reference database table$")
+	public void set_reference_model() {		
+		commonSteps.storeObject(Constant.DATABASE_MODEL_CLASS_REFERENCE_VARIABLE, Constant.ENTITY_BRAND);		
 	}
+	
+
 	
 }
 

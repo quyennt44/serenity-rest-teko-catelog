@@ -58,15 +58,15 @@ public class APISendRequestSteps {
 		}		
 	}	
 	
+	@SuppressWarnings("unchecked")
 	@Step
-	public void excuteUpdateRequest(Object object, String url, @SuppressWarnings("unchecked") HashMap<String, ?> ...parameterNameValuePairs) {	
-		String user = getUser();
-		if(parameterNameValuePairs.length > 0) {
+	public void excutePatchRequest(Object object, String url, String user, HashMap<String, ?> ...pathParams) {		
+		if(pathParams.length > 0) {
 			SerenityRest.given()
-					.pathParams(parameterNameValuePairs[0])
+					.pathParams(pathParams[0])
 					.contentType(Configuration.CONTENT_TYPE)
 					.header(Configuration.HEADER_AUTHOR, Configuration.getUserToken(user))
-					.body(object).put(url);		
+					.body(object).patch(url);		
 		}else {
 			SerenityRest.given()			
 			.contentType(Configuration.CONTENT_TYPE)

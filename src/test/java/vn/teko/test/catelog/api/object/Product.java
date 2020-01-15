@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
+import vn.teko.application.steps.CommonSteps;
 import vn.teko.application.steps.DatabaseSteps;
 
 public class Product {
@@ -15,22 +16,29 @@ public class Product {
     private Integer unitId;
     private Integer unitPoId;
     private Integer warrantyMonths;
-    private String highlight;
+    private String detailedDescription;
     private String description;
+    private Boolean type;
     
     
     public Product() {
-    	Random random = new Random();   
+    	Random random = new Random();    	
+    	CommonSteps commonSteps = new CommonSteps();	
+    	
     	DatabaseSteps database = new DatabaseSteps();
-    	this.name = RandomStringUtils.random(10, true, true).toLowerCase();	    	
-    	this.brandId = database.getRandomBrandId();
-    	this.masterCategoryId = database.getRandomMasterCategoryId();
-    	this.model = RandomStringUtils.random(10);
+    	this.name = RandomStringUtils.random(10, true, true).toLowerCase();    	
+//    	this.brandId = database.getRandomBrandId();
+//    	this.masterCategoryId = 1000;
+    	this.masterCategoryId = (Integer) commonSteps.retrieveObject("parentMasterCategoryId");
+    	this.brandId =  (Integer) commonSteps.retrieveObject("brandId");
+    	this.model = RandomStringUtils.random(10, true, true);
     	this.unitId = database.getRandomUnitId();
     	this.unitPoId = database.getRandomUnitId();
-    	this.highlight = RandomStringUtils.random(10);
-    	this.description = RandomStringUtils.random(10);
+    	this.detailedDescription = RandomStringUtils.random(10, true, true);
+    	this.description = RandomStringUtils.random(10, true, true);
     	this.warrantyMonths = random.nextInt(100);
+    	this.originCode = "VN";
+    	this.type = random.nextBoolean();
     }
 
 
@@ -112,14 +120,14 @@ public class Product {
 		this.warrantyMonths = warrantyMonths;
 	}
 
-
-	public String getHighlight() {
-		return highlight;
+	
+	public String getDetailedDescription() {
+		return detailedDescription;
 	}
 
 
-	public void setHighlight(String highlight) {
-		this.highlight = highlight;
+	public void setDetailedDescription(String detailedDescription) {
+		this.detailedDescription = detailedDescription;
 	}
 
 
@@ -131,6 +139,15 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-    
-		
+
+
+	public Boolean getType() {
+		return type;
+	}
+
+
+	public void setType(Boolean type) {
+		this.type = type;
+	}
+	
 }

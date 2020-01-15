@@ -9,22 +9,22 @@ public class Brand {
 	private String name;	
 	private String code;
 	private String logo;
-	private boolean doc_request;
-	private boolean is_active;
+	private boolean docRequest;
+	private boolean isActive;
 	
 	public Brand() {
 		Random random = new Random();
 		this.code = RandomStringUtils.random(40, true, true).toLowerCase();
 		this.name = RandomStringUtils.random(50, true, true).toLowerCase();
-		this.doc_request = random.nextBoolean();
-		this.logo = "";
+		this.docRequest = random.nextBoolean();
+		this.logo = "";		
 	}
 	
 	public Brand(String name) {
 		Random random = new Random();
 		this.code = RandomStringUtils.random(40, true, true).toLowerCase();
 		this.name = name;
-		this.doc_request = random.nextBoolean();
+		this.docRequest = random.nextBoolean();
 	}
 	
 	public String getName() {
@@ -46,21 +46,21 @@ public class Brand {
 		this.logo = logo;
 	}
 
+	public boolean getDocRequest() {
+		return docRequest;
+	}
+
+	public void setDocRequest(boolean docRequest) {
+		this.docRequest = docRequest;
+	}
+
+	public boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
 	
-
-	public boolean isIs_active() {
-		return is_active;
-	}
-
-	public void setIs_active(boolean is_active) {
-		this.is_active = is_active;
-	}
-
-	public boolean getDoc_request() {
-		return doc_request;
-	}
-
-	public void setDoc_request(boolean doc_request) {
-		this.doc_request = doc_request;
-	}
 }

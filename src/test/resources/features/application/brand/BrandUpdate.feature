@@ -1,41 +1,41 @@
-@BrandCreation
-Feature: Adding new brands
-
-  Scenario: TC01 Create A Brand With Valid Input
+@BrandUpdate
+Feature: Updating existing brands
+	Background: Create A Brand
   When User initializes an object and stores as variable 'brand'
   And User sets request url as variable 'url'
   And User sets database entity
-  And User removes field 'isActive' from object 'brand'
   And User sends request to create object 'brand' as user 'user1' with url 'url'
-  Then The response shows hppt code as 200
-  And The response should contain node 'code'
-  And The value of node 'code' should be 'success'
-  And The data of input object 'brand' and output object in database should be matched by those fields:
-  | inputField | outputField |
-  | code       | code        |
-  | name       | name        |
-  | doc_request| doc_request |
   
-  #Scenario Outline: TC02 Check Fields With Null Value
-    #When User initializes an object and stores as variable 'brand'
-    #And User sets request url as variable 'url'
-    #And User sets database entity
-    #And User sets value of object 'brand' for field '<field_name>' to 'null'
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
-    #Then The response shows hppt code as 400
-    #And The response should contain node 'errors'
-#
-    #Examples: 
-      #| field_name |
-      #| name       |
-      #| code       |
+  #Scenario: TC01 Update A Brand With Valid Input
+  #When User initializes an object and stores as variable 'brand'  
+  #And User sends request to update object 'brand' as user 'user1' with url 'url'
+  #Then The response shows hppt code as 200
+  #And The response should contain node 'code'
+  #And The value of node 'code' should be 'success'
+  #And The data of input object 'brand' and output object in database should be matched by those fields:
+  #| inputField | outputField |
+  #| code       | code        |
+  #| name       | name        |
+  #| doc_request| doc_request |
+  
+  Scenario Outline: TC02 Check Fields With Null Value
+    And User sets value of object 'brand' for field '<field_name>' to 'null'    
+    And User sets update url as variable 'update_url'
+    And User sends request to update object 'brand' as user 'user1' with url 'update_url'
+    Then The response shows hppt code as 400
+    And The response should contain node 'errors'
+
+    Examples: 
+      | field_name |
+      | name       |
+      
 #
   #Scenario Outline: TC03 Check String Fields With Empty Value
     #When User initializes an object and stores as variable 'brand'
     #And User sets request url as variable 'url'
     #And User sets database entity
     #And User sets value of object 'brand' for field '<field_name>' to 'empty'
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as <httpcode>
     #And The response should contain node '<node>'
 #
@@ -50,7 +50,7 @@ Feature: Adding new brands
     #And User sets request url as variable 'url'
     #And User sets database entity
     #And User removes field '<field_name>' from object 'brand'
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as <httpcode>
     #And The response should contain node '<node>'
 #
@@ -65,7 +65,7 @@ Feature: Adding new brands
     #And User sets request url as variable 'url'
     #And User sets database entity
     #And User sets value of object 'brand' for field '<field_name>' to 'spaces_only'
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as <httpcode>
     #And The response should contain node '<node>'
 #
@@ -80,7 +80,7 @@ Feature: Adding new brands
     #And User sets request url as variable 'url'
     #And User sets database entity
     #And User sets value of object 'brand' for field '<field_name>' to 'leading_ending_spaces' in length <length>
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 200
     #And The response should contain node 'code'
     #And The value of node 'code' should be 'success'
@@ -99,7 +99,7 @@ Feature: Adding new brands
     #And User sets request url as variable 'url'
     #And User sets database entity
     #And User sets value of object 'brand' for field '<field_name>' to 'random_alphabet' in length <length>
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 200
     #And The response should contain node 'code'
     #And The value of node 'code' should be 'success'
@@ -118,7 +118,7 @@ Feature: Adding new brands
     #And User sets request url as variable 'url'
     #And User sets database entity
     #And User sets value of object 'brand' for field '<field_name>' to 'random_alphabet' in length <length>
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 400
     #And The response should contain node 'errors'
 #
@@ -132,7 +132,7 @@ Feature: Adding new brands
     #And User sets request url as variable 'url'
     #And User sets database entity
     #And User sets value of object 'brand' for field '<field_name>' to 'contain_special_characters' in length <length>
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 200
     #And The response should contain node 'code'
     #And The value of node 'code' should be 'success'
@@ -151,7 +151,7 @@ Feature: Adding new brands
     #And User sets request url as variable 'url'
     #And User sets database entity
     #And User sets value of object 'brand' for field '<field_name>' to 'contain_space_characters' in length <length>
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 200
     #And The response should contain node 'code'
     #And The value of node 'code' should be 'success'
@@ -171,14 +171,14 @@ Feature: Adding new brands
     #And User sets database entity
     #And User store a variable 'nameVar' with value as 'random_alphabet' in length 10
     #And User sets value of object 'brand' for field '<field_name>' with variable 'nameVar'
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 200
     #And The response should contain node 'code'
     #And The value of node 'code' should be 'success'
     #When User initializes an object and stores as variable 'brand'
     #And User sets request url as variable 'url'
     #And User sets value of object 'brand' for field '<field_name>' with variable 'nameVar'
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 400
     #And The response should contain node 'errors'
 #
@@ -194,7 +194,7 @@ Feature: Adding new brands
     #And User store a variable 'nameVar' with value as 'random_alphabet' in length 30
     #And User changes value of variable 'nameVar' to 'upper_case'
     #And User sets value of object 'brand' for field '<field_name>' with variable 'nameVar'
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 200
     #And The response should contain node 'code'
     #And The value of node 'code' should be 'success'
@@ -202,7 +202,7 @@ Feature: Adding new brands
     #And User sets request url as variable 'url'
     #And User changes value of variable 'nameVar' to 'lower_case'
     #And User sets value of object 'brand' for field '<field_name>' with variable 'nameVar'
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 400
     #And The response should contain node 'errors'
 #
@@ -217,7 +217,7 @@ Feature: Adding new brands
     #And User sets database entity
     #And User store a variable 'nameVar' with value as 'random_diacritic_mark' in length 100
     #And User sets value of object 'brand' for field '<field_name>' with variable 'nameVar'
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 200
     #And The response should contain node 'code'
     #And The value of node 'code' should be 'success'
@@ -225,7 +225,7 @@ Feature: Adding new brands
     #And User sets request url as variable 'url'
     #And User changes value of variable 'nameVar' to 'no_diacritic_mark'
     #And User sets value of object 'brand' for field '<field_name>' with variable 'nameVar'
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 400
     #And The response should contain node 'errors'
 #
@@ -240,7 +240,7 @@ Feature: Adding new brands
     #And User sets request url as variable 'url'
     #And User sets database entity
     #And User sets value of object 'brand' for field 'is_active' to <is_active>
-    #And User sends request to create object 'brand' as user 'user1' with url 'url'
+    #And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 400
     #And The response should contain node 'errors'
 #
@@ -253,7 +253,7 @@ Feature: Adding new brands
   #Scenario Outline: TC15 Check Brand Code Containing Dash
     #When User sets dash '<dash>' in code at the position '<position>'
     #And User sets database entity
-#		And User sends request to create object 'brand' as user 'user1' with url 'url'
+#		And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as <http_code>
     #And The response shows content as '<response_content>'
 #
@@ -271,7 +271,7 @@ Feature: Adding new brands
     #And User changes value of variable 'nameVar' to 'upper_case'
     #And User sets value for field 'code' with variable 'nameVar'
     #And User sets database entity
-#		And User sends request to create object 'brand' as user 'user1' with url 'url'
+#		And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as 400
     #And The response shows content as 'invalid'
 #
@@ -279,14 +279,14 @@ Feature: Adding new brands
     #When User store a variable 'nameVar' with value as 'random_diacritic_mark' in length 10
     #And User sets value for field 'code' with variable 'nameVar'
     #And User sets database entity
-#		And User sends request to create object 'brand' as user 'user1' with url 'url'   
+#		And User sends request to update object 'brand' as user 'user1' with url 'url'   
     #Then The response shows hppt code as 400
     #And The response shows content as 'invalid'
 #
   #Scenario Outline: TC18 Check doc_request field
     #When User sets value for field 'doc_request' to '<doc_request_value>'
     #And User sets database entity
-#		And User sends request to create object 'brand' as user 'user1' with url 'url'
+#		And User sends request to update object 'brand' as user 'user1' with url 'url'
     #Then The response shows hppt code as <http_code>
     #And The response shows content as '<response_content>'
 #
@@ -300,8 +300,8 @@ Feature: Adding new brands
 #
   #Scenario: TC19 Check That Adding Many Brands Will Not Add Duplicated Internal Codes
     #When User sets value for field 'name' to 'random_alphabet' in length 30
-    #And User sends request to create brand as user 'user1'
-    #And User repeats action create for 10 times as user 'user1'
+    #And User sends request to update brand as user 'user1'
+    #And User repeats action update for 10 times as user 'user1'
     #Then The response shows hppt code as 200
     #And The response shows content as 'success'
     #And The list of brands have no duplicated internal code
@@ -311,7 +311,7 @@ Feature: Adding new brands
     #When User sets value for field 'name' to 'random_alphabet' in length 30
     #Given User selects image type as '<image_type>' and in size width <width> and height <height>
     #And User sets database entity
-#		And User sends request to create object 'brand' as user 'user1' with url 'url'  
+#		And User sends request to update object 'brand' as user 'user1' with url 'url'  
     #Then The response shows hppt code as <http_code>
     #And The response shows content as '<response_content>'
 #

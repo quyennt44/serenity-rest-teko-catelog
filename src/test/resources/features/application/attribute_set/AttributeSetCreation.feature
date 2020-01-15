@@ -5,7 +5,7 @@ Feature: Adding new attribute set
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User sets database entity
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 200
     And The response should contain node 'code'
     And The value of node 'code' should be 'success'
@@ -18,8 +18,8 @@ Feature: Adding new attribute set
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User sets database entity
-    And User set value of object 'attribute_set' for field 'name' to 'null'
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' to 'null'
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 400
     And The response should contain node 'errors'
 
@@ -28,8 +28,8 @@ Feature: Adding new attribute set
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User sets database entity
-    And User set value of object 'attribute_set' for field 'name' to 'empty'
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' to 'empty'
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 400
     And The response should contain node 'errors'
 
@@ -38,7 +38,7 @@ Feature: Adding new attribute set
     And User sets request url as variable 'url'
     And User sets database entity
     And User removes field 'name' from object 'attribute_set'
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 400
     And The response should contain node 'errors'
 
@@ -47,8 +47,8 @@ Feature: Adding new attribute set
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User sets database entity
-    And User set value of object 'attribute_set' for field 'name' to 'spaces_only'
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' to 'spaces_only'
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 400
     And The response should contain node 'errors'
      
@@ -57,8 +57,8 @@ Feature: Adding new attribute set
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User sets database entity
-    And User set value of object 'attribute_set' for field 'name' to 'leading_ending_spaces' in length 15
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' to 'leading_ending_spaces' in length 15
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 200
     And The response should contain node 'code'
     And The value of node 'code' should be 'success'
@@ -71,8 +71,8 @@ Feature: Adding new attribute set
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User sets database entity
-    And User set value of object 'attribute_set' for field 'name' to 'random_string' in length 255
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' to 'random_alphabet' in length 255
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 200
     And The response should contain node 'code'
     And The value of node 'code' should be 'success'
@@ -85,8 +85,8 @@ Feature: Adding new attribute set
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User sets database entity
-    And User set value of object 'attribute_set' for field 'name' to 'random_string' in length 256
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' to 'random_alphabet' in length 256
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 400
     And The response should contain node 'errors'
 
@@ -95,8 +95,8 @@ Feature: Adding new attribute set
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User sets database entity
-    And User set value of object 'attribute_set' for field 'name' to 'contain_special_characters' in length 10
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' to 'contain_special_characters' in length 10
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 200
     And The response should contain node 'code'
     And The value of node 'code' should be 'success'
@@ -109,8 +109,8 @@ Feature: Adding new attribute set
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User sets database entity
-    And User set value of object 'attribute_set' for field 'name' to 'contain_space_characters' in length 20
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' to 'contain_space_characters' in length 20
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 200
     And The response should contain node 'code'
     And The value of node 'code' should be 'success'
@@ -123,16 +123,16 @@ Feature: Adding new attribute set
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User sets database entity
-    And User store a variable 'nameVar' with value as 'random_string' in length 10
-    And User set value of object 'attribute_set' for field 'name' with variable 'nameVar'
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User store a variable 'nameVar' with value as 'random_alphabet' in length 10
+    And User sets value of object 'attribute_set' for field 'name' with variable 'nameVar'
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 200
     And The response should contain node 'code'
     And The value of node 'code' should be 'success'
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
-    And User set value of object 'attribute_set' for field 'name' with variable 'nameVar'
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' with variable 'nameVar'
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 400
     And The response should contain node 'errors'
 
@@ -141,18 +141,18 @@ Feature: Adding new attribute set
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User sets database entity
-    And User store a variable 'nameVar' with value as 'random_string' in length 30
+    And User store a variable 'nameVar' with value as 'random_alphabet' in length 30
     And User changes value of variable 'nameVar' to 'upper_case'
-    And User set value of object 'attribute_set' for field 'name' with variable 'nameVar'
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' with variable 'nameVar'
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 200
     And The response should contain node 'code'
     And The value of node 'code' should be 'success'
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User changes value of variable 'nameVar' to 'lower_case'
-    And User set value of object 'attribute_set' for field 'name' with variable 'nameVar'
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' with variable 'nameVar'
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 400
     And The response should contain node 'errors'
 
@@ -162,16 +162,16 @@ Feature: Adding new attribute set
     And User sets request url as variable 'url'
     And User sets database entity
     And User store a variable 'nameVar' with value as 'random_diacritic_mark' in length 100
-    And User set value of object 'attribute_set' for field 'name' with variable 'nameVar'
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' with variable 'nameVar'
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 200
     And The response should contain node 'code'
     And The value of node 'code' should be 'success'
     When User initializes an object and stores as variable 'attribute_set'
     And User sets request url as variable 'url'
     And User changes value of variable 'nameVar' to 'no_diacritic_mark'
-    And User set value of object 'attribute_set' for field 'name' with variable 'nameVar'
-    And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    And User sets value of object 'attribute_set' for field 'name' with variable 'nameVar'
+    And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     Then The response shows hppt code as 400
     And The response should contain node 'errors'
     
@@ -180,7 +180,7 @@ Feature: Adding new attribute set
     #When User generates attribute set with name 'attribute_set'
     #And User sets request url as variable 'url'
     #And User sets database entity    
-    #And User sends request to 'create' object 'attribute_set' as user 'user1' with url 'url'
+    #And User sends request to create object 'attribute_set' as user 'user1' with url 'url'
     #Then The response shows hppt code as 200
     #And The response should contain node 'code'
     #And The value of node 'code' should be 'success'

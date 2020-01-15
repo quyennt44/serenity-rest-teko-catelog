@@ -34,6 +34,13 @@ public class BrandStepDefinitions {
 		commonSteps.storeObject(variable, url);	
 	}
 	
+	@And("^User sets update url as variable ['\"]([^'\"]*)['\"]$")
+	public void set_update_url(String variable) {
+		String url = ApplicationEndPoints.BRAND_UPDATE.getUrl();
+		commonSteps.storeObject(variable, url);	
+	}
+		
+	
 	
 	@And("^User sets database entity$")
 	public void set_model() {
@@ -41,7 +48,7 @@ public class BrandStepDefinitions {
 		commonSteps.storeObject(Constant.DATABASE_MODEL_CLASS_VARIABLE, model);		
 	}
 	
-	@Given("^User set dash ['\"]([^'\"]*)['\"] in code at the position ['\"]([^'\"]*)['\"]$")
+	@Given("^User sets dash ['\"]([^'\"]*)['\"] in code at the position ['\"]([^'\"]*)['\"]$")
 	public void create_brand_with_status(String dash, String dashPosition) {		
 		brand = new Brand();
 		// Add a random string so that the code will not be duplicated

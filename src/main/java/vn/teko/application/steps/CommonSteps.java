@@ -82,13 +82,18 @@ public class CommonSteps {
 	}
 
 	@Step
-	public void removeFieldFromObjectAndStoreToVariable(String objectName, String paramToRemove) {
+	public Object removeFieldFromObjectAndStoreToVariable(Object object, String paramToRemove) {
 		// Get existing object instance
-		Object oldObject = Serenity.getCurrentSession().get(objectName);
+		Object oldObject = Serenity.getCurrentSession().get(object);
 		// Remove node from current instance
-		Object newObject = removeFieldFromObject(oldObject, paramToRemove);
+		Object newObject = null;
+		if(oldObject!= null)
+			newObject = removeFieldFromObject(oldObject, paramToRemove);
+		else
+			newObject = removeFieldFromObject(object, paramToRemove);
 		// Put object back to session
-		Serenity.getCurrentSession().put(objectName, newObject);
+		Serenity.getCurrentSession().put(object, newObject);
+		return newObject;
 	}
 
 //	@Step

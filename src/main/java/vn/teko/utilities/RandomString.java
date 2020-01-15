@@ -27,7 +27,7 @@ public class RandomString{
 				returnedString = RandomStringUtils.random(length, RandomStringUtils.random(length, letter, number) + Constant.UNICODE_CHARACTERS);		
 				break;	
 				
-			case Constant.RANDOM_STRING_VALUE:
+			case Constant.RANDOM_STRING_ALPHABET_VALUE:
 				returnedString = RandomStringUtils.random(length, letter, number);		
 				break;	
 				

@@ -17,22 +17,22 @@ public class TearDown {
 	@Steps
 	CommonSteps commonSteps;
 
-	@After
-	public void tidyUp() {
-		System.out.println("Deleting...");
-		
-		Class<?> className = (Class<?>) Serenity.getCurrentSession().get(Constant.DATABASE_MODEL_CLASS_VARIABLE);
-		
-		DataKeeper dataKeeper = (DataKeeper) commonSteps.retrieveObject("dataKeeper");
-		if (dataKeeper != null && dataKeeper.getIdList().size() > 0) {
-			database.deleteObjectsByIds(className, dataKeeper.getIdList());
-			try {
-				Thread.sleep(10000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-
-	}
+//	@After
+//	public void tidyUp() {
+//		System.out.println("Deleting...");
+//		
+//		Class<?> className = (Class<?>) Serenity.getCurrentSession().get(Constant.DATABASE_MODEL_CLASS_VARIABLE);
+//		
+//		DataKeeper dataKeeper = (DataKeeper) commonSteps.retrieveObject("dataKeeper");
+//		if (dataKeeper != null && dataKeeper.getIdList().size() > 0) {
+//			database.deleteObjectsByIds(className, dataKeeper.getIdList());
+//			try {
+//				Thread.sleep(10000);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//
+//	}
 }

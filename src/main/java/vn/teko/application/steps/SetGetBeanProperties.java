@@ -41,9 +41,14 @@ public class SetGetBeanProperties {
 				stmt = new Statement(object, setter, new Object[]{RandomStringUtils.random(length[0], RandomStringUtils.random(100, true, false) + Constant.SPECIAL_CHARACTERS)});					
 				break;
 				
-			case Constant.RANDOM_STRING_VALUE:
+			case Constant.RANDOM_STRING_ALPHABET_VALUE:
 				stmt = new Statement(object, setter, new Object[]{RandomStringUtils.random(length[0], RandomStringUtils.random(length[0], true, false))});				
 				break;
+
+			case Constant.RANDOM_STRING_FROM_ALL_CHARACTERS_VALUE:
+				stmt = new Statement(object, setter, new Object[]{RandomStringUtils.random(length[0])});				
+				break;				
+				
 			case Constant.RANDOM_DIACRITIC_MARK:
 				stmt = new Statement(object, setter, new Object[]{RandomStringUtils.random(length[0], RandomStringUtils.random(100, true, false) + Constant.UNICODE_CHARACTERS)});					
 				break;			

@@ -5,7 +5,7 @@ import net.thucydides.core.util.EnvironmentVariables;
 import net.thucydides.core.util.SystemEnvironmentVariables;
 
 public class Configuration {	
-	public static final String[] FEATURE_KEYWORDS = {"Scenario:", "Given", "When", "Then", "And", "But"};
+	public static final String[] FEATURE_KEYWORDS = {"Scenario:","Scenario Outline:", "Given", "When", "Then", "And", "But"};
 	public static final String CONTENT_TYPE = "application/json";
 	public static final String HEADER_CONTENT_TYPE = "Content-Type";
 	public static final String HEADER_AUTHOR = "Authorization";

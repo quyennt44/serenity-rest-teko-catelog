@@ -3,13 +3,14 @@ package vn.teko.test.application.common;
 import vn.teko.jira.Configuration;
 
 public enum ApplicationEndPoints {
-	PRODUCT_CREATION("/products/"),
+	PRODUCT_CREATION("/products"),
     BRAND_CREATION("/brands"),
-    BRAND_UPDATING("/brands/{brandId}"),
+    BRAND_UPDATE("/brands/{brandId}"),
     
     ATTRIBUTE_SET_CREATION("/attribute_sets"),
     
-    SALE_CATEGORY_CREATION("/sale_categories"),
+    MASTER_CATEGORY_CREATION("/master_categories"),
+    MASTER_CATEGORY_UPDATE("/master_categories/{masterCategoryId}"),
 	
 	SALE_CHANNEL_CREATION("/sale_channels");
 

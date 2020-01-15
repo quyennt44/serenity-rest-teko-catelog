@@ -35,6 +35,6 @@ public class SaleChannelStepDefinitions {
 	
 	@And("^User sets temp database table$")
 	public void set_temp_model() {		
-		commonSteps.storeObject(Constant.DATABASE_MODEL_CLASS_TEMP_VARIABLE, Constant.ENTITY_SELLER);		
+		commonSteps.storeObject(Constant.DATABASE_MODEL_CLASS_REFERENCE_VARIABLE, Constant.ENTITY_SELLER);		
 	}
 }

@@ -10,8 +10,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "master_categories")
-@NamedNativeQuery(name="SaleCategoryModel.selectRandomId", query="SELECT id FROM brands ORDER BY RAND() LIMIT 1")
-public class SaleCategoryModel {
+@NamedNativeQuery(name="MasterCategoryModel.selectRandomId", query="SELECT id FROM master_categories ORDER BY RAND() LIMIT 1")
+public class MasterCategoryModel {
 	@Column(name = "id")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -60,6 +60,7 @@ public class Helper {
 		ObjectMapper mapper = new ObjectMapper();
 
 		String response = SerenityRest.then().extract().body().asString();
+//		System.out.println("Response = "  + response);
 		JsonNode rootNode;
 		try {
 			rootNode = mapper.readTree(response);

@@ -9,7 +9,8 @@ public class Constant {
 	public static final String EMPTY_VALUE = "empty";
 	public static final String SPACES_ONLY_VALUE = "spaces_only";
 	public static final String LEADING_ENDING_SPACES_VALUE = "leading_ending_spaces";
-	public static final String RANDOM_STRING_VALUE = "random_string";
+	public static final String RANDOM_STRING_ALPHABET_VALUE = "random_alphabet";
+	public static final String RANDOM_STRING_FROM_ALL_CHARACTERS_VALUE = "random_string_from_all_characters";
 	public static final String CONTAIN_SPECIAL_CHARACTERS_VALUE = "contain_special_characters";
 	public static final String CONTAIN_SPACE_VALUE = "contain_space_characters";
 	public static final String RANDOM_DIACRITIC_MARK = "random_diacritic_mark";
@@ -34,18 +35,24 @@ public class Constant {
 	
 	public static final String RESPONSE_ID_FIELD = "id";
 	public static final String DATABASE_MODEL_CLASS_VARIABLE = "database_entity";
-	public static final String DATABASE_MODEL_CLASS_TEMP_VARIABLE = "database_entity_temp";
+	public static final String DATABASE_MODEL_CLASS_REFERENCE_VARIABLE = "database_entity_reference";
 	public static final String DATATABLE_INPUT_LABEL = "inputField";
 	public static final String DATATABLE_OUTPUT_LABEL = "outputField";
 	
 	//Entity name
 	public static final String ENTITY_SALE_CHANNEL = "SaleChannelModel";
 	public static final String ENTITY_SELLER = "SellerModel";
-	public static final String ENTITY_SALE_CATEGORY = "SaleCategoryModel";
+	public static final String ENTITY_SALE_CATEGORY = "MasterCategoryModel";
+	public static final String ENTITY_BRAND = "BrandModel";
 	
 	//seller status
 	public static final int SELLER_STATUS_ACTIVE = 1;
 	public static final int SELLER_STATUS_INACTIVE = 0;
 	
+	public static final int STATUS_ACTIVE = 1;
+	public static final int STATUS_INACTIVE = 0;	
+	
 	public static final int SERVER_STATUS_ERROR = 502;
+	
+	public static final String USER1 = "user1";
 }

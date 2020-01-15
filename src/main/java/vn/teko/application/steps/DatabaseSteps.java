@@ -122,7 +122,7 @@ public class DatabaseSteps {
 	public int getRandomMasterCategoryId() {
 		EntityManagerFactory managerFactory = getEntityManagerFactory();
 		EntityManager em = managerFactory.createEntityManager();
-        int id = (int) em.createNamedQuery("SaleCategoryModel.selectRandomId").getSingleResult();
+        int id = (int) em.createNamedQuery("MasterCategoryModel.selectRandomId").getSingleResult();
         
         return id;
 	}	
